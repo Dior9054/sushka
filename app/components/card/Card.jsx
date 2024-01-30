@@ -10,8 +10,8 @@ export default function Card({ food, canOpen }) {
     const [page, setPage] = useState(false)
     const [cart, setCart] = useState(false)
 
-    const get__Local = () => JSON.parse(localStorage.getItem("favorite")) || []
-    const get__cart = () => JSON.parse(localStorage.getItem("cart")) || []
+    const get__Local = () => JSON?.parse(localStorage?.getItem("favorite")) || []
+    const get__cart = () => JSON?.parse(localStorage?.getItem("cart")) || []
 
     const check__Local = () => get__Local().some(item => item.id == food.id)
     const check__cart = () => get__cart().some(item => item.id == food.id)

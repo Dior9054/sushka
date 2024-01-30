@@ -11,8 +11,6 @@ export const Hid = createContext(false)
 export const Little = createContext(0)
 
 export default function RootLayout({ children }) {
-    // const [fave, setFave] = useState(JSON.parse(localStorage.getItem("favorite")).length || 0)
-    // const [add, setAdd] = useState(JSON?.parse(localStorage?.getItem("cart")).length || 0)
     const [fave, setFave] = useState(0)
     const [add, setAdd] = useState(0)
     const [modal, setModal] = useState(false)
@@ -20,8 +18,8 @@ export default function RootLayout({ children }) {
     const [offset, setOffset] = useState(0)
 
     useEffect(() => {
-        setFave(JSON?.parse(localStorage?.getItem("favorite")).length || 0)
-        setAdd(JSON?.parse(localStorage?.getItem("cart")).length || 0)
+        setFave(JSON?.parse(localStorage?.getItem("favorite"))?.length || 0)
+        setAdd(JSON?.parse(localStorage?.getItem("cart"))?.length || 0)
     }, [])
 
     const handle__scroll = () => {

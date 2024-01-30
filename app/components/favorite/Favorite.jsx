@@ -5,7 +5,7 @@
 import Card from "../card/Card"
 
 function Favorite({ setModal, fave }) {
-    const get__Favorite = () => JSON.parse(localStorage.getItem("favorite")) || []
+    const get__Favorite = () => JSON?.parse(localStorage?.getItem("favorite")) || []
 
     const handle__Click = (e) => {
         let check__el = !e.target.closest(".modal__body") || !!e.target.closest(".modal__close")
