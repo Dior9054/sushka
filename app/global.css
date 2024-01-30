@@ -832,7 +832,7 @@ body {
 
     display: flex;
 
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 .content {
@@ -1440,6 +1440,14 @@ body {
     .buy__card {
         height: fit-content;
         flex-direction: column;
+    }
+
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: fit-content;
     }
 }
 
