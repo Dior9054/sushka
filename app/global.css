@@ -832,7 +832,7 @@ body {
 
     display: flex;
 
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .content {
