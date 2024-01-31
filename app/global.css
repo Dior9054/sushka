@@ -1272,11 +1272,6 @@ body {
 }
 
 /*
-@media(max-width: 1024px) {
-
-    
-}
-
 @media(max-width: 900px) {
     .card__favorite--title {
         font-size: 18px;
@@ -1681,3 +1676,14 @@ body {
         width: 100%;
     }
 } */
+
+
+
+
+.modal__title {
+    height: 10vh;
+}
+
+.modal__block {
+    height: 90vh;
+}
