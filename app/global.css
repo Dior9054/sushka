@@ -1684,3 +1684,17 @@ body {
 } */
 
 
+.modal {
+    height: 100dvh;
+}
+
+.modal__body {
+    height: 100%;
+}
+
+.modal__block {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+}
