@@ -16,10 +16,16 @@ function Favorite({ setModal, fave }) {
     return (
         <div className="modal" onClick={handle__Click}>
             <div className="modal__body">
-                <button className="button modal__close">
+                {/* <button className="button modal__close">
                     <img src="/assets/svg/close.svg" />
                 </button>
-                <h1>Yor Favorites</h1>
+                <h1>Yor Favorites</h1> */}
+                <div className="modal__title">
+                    <button className="button modal__close">
+                        <img src="/assets/svg/close.svg" />
+                    </button>
+                    <h1>Yor Favorites</h1>
+                </div>
                 <div className={`modal__block ${!!fave ? "" : "active"}`}>
                     {
                         !!fave

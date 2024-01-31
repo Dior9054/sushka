@@ -542,7 +542,9 @@ body {
 
     transform: translateX(0);
     animation: slide-left 0.2s 1 linear;
-    overflow-y: auto;
+    /* overflow-y: auto; */
+    display: flex;
+    flex-direction: column;
 }
 
 .modal.active .modal__body {
@@ -550,7 +552,7 @@ body {
     animation: slide-right 0.2s 1 linear;
 }
 
-.modal__body>h1 {
+.modal__title>h1 {
     color: #FFF;
     font-family: var(--jost__family);
     font-size: 32px;
@@ -562,6 +564,19 @@ body {
     margin-top: 30px;
     margin-bottom: 10px;
 }
+
+/* .modal__body>h1 {
+    color: #FFF;
+    font-family: var(--jost__family);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+} */
 
 .modal__empty {
     position: absolute;
