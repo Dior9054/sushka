@@ -1512,13 +1512,14 @@ body {
     .navigation {
         border-radius: 2px;
     }
+
+    .cards {
+        grid-gap: 12px;
+    }
 }
 
 /*
 @media(max-width: 470px) {
-    .cards {
-        grid-gap: 12px;
-    }
 
     .card__favorite {
         padding-bottom: 5px;
@@ -1689,12 +1690,3 @@ body {
         width: 100%;
     }
 } */
-
-
-.menu {
-    height: 10dvh;
-}
-
-.content {
-    height: 90dvh;
-}
