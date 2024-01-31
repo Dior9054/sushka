@@ -19,6 +19,12 @@
     --op__yellow__bg__color: yellow;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     background-color: var(--parent__bg__color);
     overflow: hidden;
@@ -1678,15 +1684,3 @@ body {
 } */
 
 
-.modal {
-    height: 100lvh;
-    position: fixed;
-}
-
-.parent {
-    height: 100%;
-}
-
-.modal__body {
-    height: 100% !important;
-}
