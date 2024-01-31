@@ -39,3 +39,4 @@ function Favorite({ setModal, fave }) {
 }
 
 export default Favorite;
+
