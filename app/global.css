@@ -1676,3 +1676,9 @@ body {
         width: 100%;
     }
 } */
+
+
+.modal {
+    height: 100lvh;
+    position: fixed;
+}
