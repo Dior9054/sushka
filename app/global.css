@@ -1340,6 +1340,7 @@ body {
     .parent {
         flex-direction: column-reverse;
         justify-content: space-between;
+        gap: 20px;
     }
 
     .menu {
@@ -1506,6 +1507,10 @@ body {
     .handle__form {
         width: 80%;
     }
+
+    .buy__det {
+        border-radius: 5px;
+    }
 }
 
 @media(max-width: 470px) {
@@ -1516,87 +1521,10 @@ body {
     .cards {
         grid-gap: 12px;
     }
-}
-
-/*
-@media(max-width: 470px) {
-
-    .card__favorite {
-        padding-bottom: 5px;
-    }
-
-    .card__add {
-        padding-top: 5px;
-    }
-
-    .card>img {
-        height: 100px;
-    }
-
-    .content {
-        padding: 20px 20px;
-    }
-
-    .button--favorite {
-        width: 40px;
-        height: 40px;
-    }
-
-    .burger,
-    .header__logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    .header__burger {
-        gap: 10px;
-    }
-
-    .button--favorite span {
-        width: 12px;
-        height: 12px;
-        font-size: 8px;
-    }
-
-    .main__title h1 {
-        font-size: 24px;
-    }
-
-    .main__title h2 {
-        font-size: 14px;
-    }
-
-    .main__title {
-        margin: 15px 0;
-    }
-
-    .page__body {
-        width: 100%;
-    }
-
-    .modal__body {
-        width: 234px;
-    }
 
     .modal__body>h1 {
         font-size: 24px;
         margin-bottom: 0px;
-    }
-
-    .modal__close {
-        width: 20px;
-        height: 20px;
-        top: 5px;
-        left: 5px;
-    }
-
-    .nav__close {
-        width: 25px;
-        height: 25px;
-    }
-
-    .navigation {
-        padding: 0 20px;
     }
 
     .search {
@@ -1604,30 +1532,17 @@ body {
     }
 
     .search label {
-        padding: 4px;
-        width: 20px;
-        height: 20px;
+        padding: 5px;
+        width: 25px;
+        height: 25px;
     }
 
     .search input {
-        font-size: 13px;
-    }
-
-    .buy__left {
-        width: 100%;
-        height: 226px;
-    }
-
-    .buy__det {
-        border-radius: 5px;
+        font-size: 15px;
     }
 
     .buy__bottom button {
         width: 100%;
-    }
-
-    .loader__width {
-        height: 200px;
     }
 
     .handle__title {
@@ -1650,10 +1565,6 @@ body {
         font-size: 12px;
     }
 
-    .handle__form {
-        width: 70%;
-    }
-
     .handle__close {
         width: 20px;
         height: 20px;
@@ -1667,26 +1578,30 @@ body {
     }
 
     .navigation {
-        width: 78%;
-    }
-
-    .menu__item {
-        width: 40px;
-        height: 40px;
-    }
-
-    .menu__item img {
-        width: 60%;
-        height: 60%;
-    }
-
-    .menu__item {
-        border: 3px solid var(--op__bold__bg__color);
+        width: 70%;
     }
 }
 
 @media(max-width: 375px) {
-    .modal__body {
-        width: 100%;
+
+    .buy__bottom h1,
+    .buy__bottom p {
+        font-size: 17px;
     }
-} */
+
+    .buy__bottom {
+        gap: 14px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card>img {
+        height: 168px;
+    }
+
+    .page__top img {
+        height: 185px;
+    }
+}
