@@ -1682,3 +1682,11 @@ body {
     height: 100lvh;
     position: fixed;
 }
+
+.parent {
+    height: 100%;
+}
+
+.modal__body {
+    height: 100% !important;
+}
