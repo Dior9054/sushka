@@ -32,7 +32,7 @@ function Bask({ name, price, setCount, setmony, item, el }) {
                     setCount(prev => state > 0 ? prev -= 1 : prev)
                     setmony(prev => state > 0 ? prev -= +price : prev)
                 }}>-</button>
-                <div>{state}</div>
+                <h1>{state}</h1>
                 <button onClick={() => {
                     setState(prev => prev += 1)
                     setCount(prev => prev += 1)

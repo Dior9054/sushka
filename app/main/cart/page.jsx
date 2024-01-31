@@ -3,6 +3,7 @@
 import { axiosJS } from "@/app/components/axios/axiosJS";
 import Buy from "@/app/components/buy/Buy";
 import Forme from "@/app/components/forme/Forme";
+import Order from "@/app/components/orders/Order";
 import { createContext, useEffect, useState } from "react";
 
 export const Foods = createContext("")
@@ -12,6 +13,7 @@ export default function page() {
   const [count, setCount] = useState(0)
   const [mony, setmony] = useState(0)
   const [open, setOpen] = useState(false)
+  const [flip, setFlip] = useState(false)
   const [food, setFood] = useState([{
     name: '',
     size: [
@@ -91,6 +93,8 @@ export default function page() {
       })
       .catch(err => console.log(err))
 
+    setFlip(prev => !prev)
+    setTimeout(() => setFlip(prev => !prev), 2000)
     setOpen(prev => !prev)
   }
 
@@ -101,6 +105,13 @@ export default function page() {
 
   return (
     <Foods.Provider value={[food, setFood]}>
+      {
+        flip
+          ?
+          <Order />
+          :
+          ""
+      }
       {
         !!open
           ?

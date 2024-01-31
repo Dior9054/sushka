@@ -26,7 +26,7 @@ function Own({ page, food, setPage, cart, setCart, setAdd, check__cart, get__car
                 <button className="button page__close">
                     <img src="/assets/svg/arrow__left.svg" />
                 </button>
-                <div>
+                <div className="page__flex">
                     <div className="page__top">
                         <img src={food.image} />
                     </div>
