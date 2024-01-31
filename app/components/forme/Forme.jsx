@@ -25,7 +25,7 @@ function Forme({ setOpen, handle__submit }) {
                 <div className="handle__block">
                     <label htmlFor="phone">
                         Phone
-                        <input type="tel" pattern="^+996[0-9]*" placeholder="+996..." minLength="12" id="phone" name="phone" required />
+                        <input type="tel" pattern="^\+996\d{9}$" placeholder="+996..." minLength="12" id="phone" name="phone" required />
                     </label>
                 </div>
                 <div className="handle__block">

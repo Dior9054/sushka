@@ -1605,3 +1605,50 @@ body {
         height: 185px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.parent {
+    justify-content: flex-start !important;
+}
+
+.parent>div:first-child {
+    height: 10% !important  ;
+}
+
+.parent>div>:last-child {
+    height: 90% !important;
+}
