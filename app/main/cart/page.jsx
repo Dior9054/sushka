@@ -93,8 +93,8 @@ export default function page() {
       })
       .catch(err => console.log(err))
 
-    setFlip(prev => !prev)
-    setTimeout(() => setFlip(prev => !prev), 2000)
+    setTimeout(() => setFlip(prev => !prev), 200)
+    setTimeout(() => setFlip(prev => !prev), 4000)
     setOpen(prev => !prev)
   }
 

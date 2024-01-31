@@ -32,7 +32,7 @@ body {
 
 .home {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 
     display: flex;
     flex-direction: column;
@@ -633,7 +633,7 @@ body {
 
 .page__body {
     width: 40vw;
-    height: 100vh;
+    height: 100dvh;
 
     padding: 10px;
 
@@ -814,7 +814,7 @@ body {
 
 .page {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 
     position: absolute;
     top: 0;
@@ -855,7 +855,7 @@ body {
 
 .parent {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 
     display: flex;
 
@@ -1103,7 +1103,7 @@ body {
 
 .handle {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 
     position: fixed;
     top: 0;
@@ -1276,7 +1276,6 @@ body {
     }
 }
 
-/*
 @media(max-width: 900px) {
     .card__favorite--title {
         font-size: 18px;
@@ -1312,16 +1311,28 @@ body {
         width: 50%;
     }
 
-    .buy__bottom h1 {
-        font-size: 24px;
-    }
-
-    .buy__bottom p {
-        font-size: 24px;
+    .buy__bottom button {
+        width: 280px;
     }
 
     .buy__bottom button {
         font-size: 20px;
+    }
+
+    .modal__body {
+        width: 248px;
+    }
+
+    .page__top img {
+        height: 170px;
+    }
+
+    .order {
+        width: 200px;
+    }
+
+    .order h1 {
+        font-size: 14px;
     }
 }
 
@@ -1336,7 +1347,7 @@ body {
         justify-content: center;
     }
 
-    .menu>span {
+    .menu__line {
         bottom: 0;
         top: auto;
         transform: translateY(50%);
@@ -1356,14 +1367,13 @@ body {
         display: none;
         flex-direction: column;
         align-items: flex-end;
-        padding: 0 20px;
         background-color: #161515;
         overflow-y: auto;
         border-radius: 10px;
-        padding: 20px;
-        height: 50vh;
+        padding: 20px 25px;
+        height: 50dvh;
         border: 1px solid transparent;
-        border-right-color: white;
+        border-right-color: #FFF;
     }
 
     .navigation__nodal.active {
@@ -1371,8 +1381,8 @@ body {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh;
-        background-color: black;
+        height: 100dvh;
+        background-color: var(--parent__bg__color);
         padding: 10px;
         display: flex;
         align-items: center;
@@ -1391,34 +1401,18 @@ body {
     .nav__item {
         font-size: 16px;
         padding: 10px 25px;
-        width: 50%;
-    }
-
-    .parent {
-        justify-content: space-between;
-    }
-
-    .nav__item {
         width: 70%;
-    }
-
-    .page {
-        width: 100%;
     }
 
     .buy__left {
         width: 100%;
-        height: 100%;
     }
 
     .buy__right {
         width: 100%;
     }
 
-    .buy__bottom h1 {
-        font-size: 22px;
-    }
-
+    .buy__bottom h1,
     .buy__bottom p {
         font-size: 22px;
     }
@@ -1428,41 +1422,35 @@ body {
     }
 
     .page__top img {
-        height: 100%;
         min-height: 250px;
     }
 
-    .card>img {
-        width: 100%;
-        height: 218px;
+    .card__block {
+        border-radius: 2px;
+        margin: 5px;
+        padding: 5px;
     }
 
     .card {
-        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-    }
-
-    .card__block {
-        width: 96%;
     }
 
     .loader__width {
-        width: 100%;
+        height: 226px;
     }
 
     .card>img {
         height: 135px;
     }
 
-    .card__block {
-        width: 93%;
-    }
-
     .page__body {
         width: 60vw;
     }
+}
+
+/*
+@media(max-width: 768px) {
 
     .modal__block {
         padding: 20px 20px;
