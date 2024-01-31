@@ -1679,6 +1679,6 @@ body {
 
 
 .modal {
-    height: 100svh;
+    height: 100lvh;
     position: fixed;
 }
