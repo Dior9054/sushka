@@ -1643,10 +1643,11 @@ body {
 
 .parent {
     justify-content: flex-start !important;
+    height: 100vh !important;
 }
 
 .parent>div:first-child {
-    height: 10% !important  ;
+    height: 10% !important;
 }
 
 .parent>div>:last-child {
