@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
         <meta property="og:site_name" content="PWA App" />
         <meta property="og:url" content="https://yourdomain.com" />
         {/* <meta property="og:image" content="https://yourdomain.com/icons/apple-touch-icon.png" /> */}
-        <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sushi_platter.jpg/220px-Sushi_platter.jpg" />
+        <meta property="og:image" content="/assets/svg/logo.svg" />
 
       </head>
       <body className={jost.className}>
