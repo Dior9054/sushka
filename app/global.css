@@ -518,7 +518,7 @@ body {
 
 .modal {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 
     position: absolute;
     top: 0;
@@ -537,7 +537,7 @@ body {
 
 .modal__body {
     width: 300px;
-    height: 100vh;
+    height: 100%;
 
     position: absolute;
     top: 0;
@@ -549,7 +549,6 @@ body {
 
     transform: translateX(0);
     animation: slide-left 0.2s 1 linear;
-    /* overflow-y: auto; */
     display: flex;
     flex-direction: column;
 }
@@ -603,11 +602,11 @@ body {
     height: 100%;
 
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
 
     position: relative;
-    justify-content: center;
-    gap: 20px;
 
     padding: 10px 10px;
 
@@ -1682,19 +1681,3 @@ body {
         width: 100%;
     }
 } */
-
-
-.modal {
-    height: 100dvh;
-}
-
-.modal__body {
-    height: 100%;
-}
-
-.modal__block {
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: flex-start;
-}
