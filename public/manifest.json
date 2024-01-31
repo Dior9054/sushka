@@ -1,22 +1,22 @@
 {
-  "name": "PWA App",
-  "short_name": "App",
+  "name": "SUSHI",
+  "short_name": "sushi app",
   "icons": [
     {
       "src": "/assets/img/main.png",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "/assets/svg/logo.svg",
       "purpose": "any maskable"
     },
     {
       "src": "/assets/img/main.png",
       "sizes": "384x384",
-      "type": "image/png"
+      "type": "/assets/svg/logo.svg"
     },
     {
       "src": "/assets/img/main.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "/assets/svg/logo.svg"
     }
   ],
   "theme_color": "#FFFFFF",

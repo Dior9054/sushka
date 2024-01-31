@@ -90,11 +90,14 @@ export default function page() {
             text: totalDate,
           }),
         })
+          .then(res => res.json())
+          .then(res => {
+            setTimeout(() => setFlip(prev => !prev), 200)
+            setTimeout(() => setFlip(prev => !prev), 4000)
+          })
       })
       .catch(err => console.log(err))
 
-    setTimeout(() => setFlip(prev => !prev), 200)
-    setTimeout(() => setFlip(prev => !prev), 4000)
     setOpen(prev => !prev)
   }
 
