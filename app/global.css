@@ -1642,14 +1642,24 @@ body {
 
 
 .parent {
-    justify-content: flex-start !important;
-    /* height: 100vh !important; */
+    /* justify-content: flex-start !important; */
+    height: 100vh !important;
 }
 
 .parent>div:first-child {
-    height: 10dvh !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    /* height: 10dvh !important; */
 }
 
 .parent>div>:last-child {
-    height: 90dvh !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    /* height: 90dvh !important; */
 }
