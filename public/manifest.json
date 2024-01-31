@@ -3,20 +3,20 @@
   "short_name": "sushi app",
   "icons": [
     {
-      "src": "/assets/img/main.png",
+      "src": "/assets/svg/logo.svg",
       "sizes": "192x192",
-      "type": "/assets/svg/logo.svg",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/img/main.png",
+      "src": "/assets/svg/logo.svg",
       "sizes": "384x384",
-      "type": "/assets/svg/logo.svg"
+      "type": "image/png"
     },
     {
-      "src": "/assets/img/main.png",
+      "src": "/assets/svg/logo.svg",
       "sizes": "512x512",
-      "type": "/assets/svg/logo.svg"
+      "type": "image/png"
     }
   ],
   "theme_color": "#FFFFFF",
