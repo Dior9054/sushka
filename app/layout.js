@@ -17,12 +17,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* <link rel='manifest' href='/manifest.json' /> */}
-
-
-
-
-
 
         <meta name="application-name" content="SUSHI" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,9 +26,10 @@ export default function RootLayout({ children }) {
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-        <meta name="msapplication-TileColor" content="#2B5797" />
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="theme-color" content="#FFFFFF" />
+        <meta name="keywords" content="sushi" />
 
         <link rel="apple-touch-icon" href="/assets/svg/logo.svg" />
         <link rel="apple-touch-icon" sizes="152x152" href="/assets/svg/logo.svg" />
@@ -44,30 +39,22 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/svg/logo.svg" />
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/svg/logo.svg" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="mask-icon" href="/assets/svg/logo.svg" color="#5bbad5" />
+        <link rel="mask-icon" href="/assets/svg/logo.svg" color="#FFFFFF" />
         <link rel="shortcut icon" href="/assets/favicon.ico" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
 
-
-
-
-
-
-        {/* <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://yourdomain.com" />
-        <meta name="twitter:title" content="PWA App" />
-        <meta name="twitter:description" content="Best PWA App in the world" />
+        <meta name="twitter:title" content="Sushi" />
+        <meta name="twitter:description" content="order sushi from our restoran" />
         <meta name="twitter:image" content="https://yourdomain.com/icons/android-chrome-192x192.png" />
-        <meta name="twitter:creator" content="@DavidWShadow" />
+        <meta name="twitter:creator" content="@Dior" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="PWA App" />
-        <meta property="og:description" content="Best PWA App in the world" />
+        <meta property="og:title" content="Sushi" />
+        <meta property="og:description" content="order sushi from our restoran" />
         <meta property="og:site_name" content="PWA App" />
         <meta property="og:url" content="https://yourdomain.com" />
-        <meta property="og:image" content="https://yourdomain.com/icons/apple-touch-icon.png" /> */}
-
-
-
+        <meta property="og:image" content="https://yourdomain.com/icons/apple-touch-icon.png" />
 
       </head>
       <body className={jost.className}>
