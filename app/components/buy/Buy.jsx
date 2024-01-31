@@ -1,7 +1,7 @@
 
 "use client"
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Bask from "../bask/Bask";
 
 function Buy({ item, setCount, setmony }) {

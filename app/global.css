@@ -542,6 +542,7 @@ body {
 
     transform: translateX(0);
     animation: slide-left 0.2s 1 linear;
+    overflow-y: auto;
 }
 
 .modal.active .modal__body {
@@ -1042,6 +1043,10 @@ body {
     transition: 0.2s;
 }
 
+.buy__card {
+    height: 390px;
+}
+
 .handle {
     width: 100%;
     height: 100vh;
@@ -1064,7 +1069,7 @@ body {
 }
 
 .handle__form {
-    width: 30%;
+    width: 40%;
 
     display: flex;
     flex-direction: column;
@@ -1146,21 +1151,15 @@ body {
     background-color: var(--op__card__bg__color);
 }
 
-@media(max-width: 1440px) {
-    .buy__card {
-        height: 390px;
-    }
-}
-
 @media(max-width: 1200px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
     }
+}
 
-    .handle__form {
-        width: 40%;
-    }
+/* 
 
+@media(max-width: 1200px) {
     .page__top img {
         height: 282px;
     }
@@ -1553,7 +1552,7 @@ body {
     }
 
     .search label {
-        /* padding: 4px; */
+        padding: 4px;
         width: 20px;
         height: 20px;
     }
@@ -1638,4 +1637,4 @@ body {
     .modal__body {
         width: 100%;
     }
-}
+} */

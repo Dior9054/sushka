@@ -1,7 +1,13 @@
 
-function Forme({ handle__Click, handle__submit }) {
+function Forme({ setOpen, handle__submit }) {
+
+    const handle__Click = (e) => {
+        let check = !e.target.closest(".handle__form") || !!e.target.closest(".handle__close")
+        if (check) setOpen(prev => !prev)
+    }
+
     return (
-        <div className="handle">
+        <div className="handle" onClick={handle__Click}>
             <form className="handle__form" onSubmit={handle__submit}>
                 <h1 className="handle__title">Заказать блюда</h1>
                 <div className="handle__block">
@@ -19,23 +25,23 @@ function Forme({ handle__Click, handle__submit }) {
                 <div className="handle__block">
                     <label htmlFor="phone">
                         Phone
-                        <input type="tel" pattern="^+996[0-9]*" placeholder="+996..." id="phone" name="phone" required />
+                        <input type="tel" pattern="^+996[0-9]*" placeholder="+996..." minLength="12" id="phone" name="phone" required />
                     </label>
                 </div>
                 <div className="handle__block">
                     <label htmlFor="address">
                         Address
-                        <input type="text" placeholder="Enter your address..." id="address" name="address" required />
+                        <input type="text" placeholder="Enter your address..." minLength="2" id="address" name="address" required />
                     </label>
                 </div>
                 <div className="handle__block">
                     <label htmlFor="home">
                         Home
-                        <input type="text" placeholder="Enter your home..." id="home" name="home" required />
+                        <input type="text" placeholder="Enter your home..." minLength="1" id="home" name="home" required />
                     </label>
                 </div>
                 <button type="submit" className="handle__button">Отправить</button>
-                <button type="button" className="button handle__close" onClick={handle__Click}>
+                <button type="button" className="button handle__close">
                     <img src="/assets/svg/close.svg" />
                 </button>
             </form>

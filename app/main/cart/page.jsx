@@ -90,6 +90,8 @@ export default function page() {
         })
       })
       .catch(err => console.log(err))
+
+    setOpen(prev => !prev)
   }
 
   useEffect(() => {
@@ -102,7 +104,7 @@ export default function page() {
       {
         !!open
           ?
-          <Forme handle__Click={handle__Click} handle__submit={handle__submit} />
+          <Forme setOpen={setOpen} handle__submit={handle__submit} />
           :
           ""
       }
@@ -131,3 +133,4 @@ export default function page() {
     </Foods.Provider>
   );
 }
+
