@@ -40,11 +40,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/YP_logo.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="mask-icon" href="/assets/YP_logo.png" color="#FFFFFF" />
-        <link rel="shortcut icon" href="/assets/YP_logo.png" />
+        <link rel="shortcut icon" href="/assets/favicon.ico" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://yourdomain.com" />
+        <meta name="twitter:url" content="https:/www.yesh-pizza.kg" />
         <meta name="twitter:title" content="Yesh Pizza" />
         <meta name="twitter:description" content="Закажи любимые блюда в нашем сайте от Yesh Pizza" />
         <meta name="twitter:image" content="/assets/YP_logo.png" />
@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content="Yesh Pizza" />
         <meta property="og:description" content="Закажи любимые блюда в нашем сайте от Yesh Pizza" />
         <meta property="og:site_name" content="YP App" />
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:url" content="https://www.yesh-pizza.kg" />
         <meta property="og:image" content="/assets/YP_logo.png" />
 
       </head>
