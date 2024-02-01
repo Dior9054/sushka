@@ -54,7 +54,6 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content="Закажи любимые блюда в нашем сайте от Yesh Pizza" />
         <meta property="og:site_name" content="YP App" />
         <meta property="og:url" content="https://yourdomain.com" />
-        {/* <meta property="og:image" content="https://yourdomain.com/icons/apple-touch-icon.png" /> */}
         <meta property="og:image" content="/assets/YP_logo.png" />
 
       </head>

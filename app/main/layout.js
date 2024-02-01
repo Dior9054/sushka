@@ -89,12 +89,3 @@ export default function RootLayout({ children }) {
         </Little.Provider>
     );
 }
-
-
-
-
-
-
-
-
-
