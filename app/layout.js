@@ -9,8 +9,8 @@ const jost = Jost({
 })
 
 export const metadata = {
-  title: 'Sushi App',
-  description: 'order sushi from our restoran',
+  title: 'Yesh Pizza',
+  description: 'Закажи любимые блюда в нашем сайте от Yesh Pizza',
 }
 
 export default function RootLayout({ children }) {
