@@ -1,9 +1,82 @@
+import { axiosJS } from "../axios/axiosJS"
 
-function Forme({ setOpen, handle__submit }) {
+function Forme({ setOpen, setFlip, mony }) {
 
     const handle__Click = (e) => {
         let check = !e.target.closest(".handle__form") || !!e.target.closest(".handle__close")
         if (check) setOpen(prev => !prev)
+    }
+
+    const handle__submit = (e) => {
+        e.preventDefault()
+
+        let userDate = new FormData(e.target)
+        userDate = Object.fromEntries(userDate.entries())
+
+        let totalDate = ""
+        let fix = 0
+        for (let key in userDate) {
+            totalDate += `${fix += 1}) ${key}: ${userDate[key]}; \n`
+        }
+
+        let b = JSON.parse(localStorage.getItem("cart"))
+
+        let ordering_food = []
+        let orderNumber = 0
+
+        totalDate += "Заказы: \n"
+
+        b.forEach(item => {
+            if (!!item.bought) {
+                totalDate += `  ${orderNumber += 1}) ${item.name} \n`
+                let sizes = []
+                item.sizes.forEach(el => {
+                    sizes.push({
+                        size: el.id,
+                        quantity: el.quantity
+                    })
+                    if (!!el.quantity) {
+                        totalDate += `            ${el.name} ${el.quantity}штук \n`
+                    }
+                })
+                ordering_food.push({
+                    food: item.id,
+                    sizes_for_sale: sizes
+                })
+            }
+        })
+
+        let time = new Date()
+
+        totalDate += `Итог: ${mony}сом \n`
+        totalDate += `Время: ${time}`
+
+        let crorder = {
+            ordering_food: ordering_food,
+            ...userDate
+        }
+
+        axiosJS.post("orders/", crorder)
+            .then(res => {
+                fetch(`https://api.telegram.org/bot6713213966:AAH4BFRuKmQR5spD7TfcS7frHJ1gZr2eyDM/sendMessage`, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: "-4136328784",
+                        text: totalDate,
+                    }),
+                })
+                    .then(res => res.json())
+                    .then(res => {
+                        setTimeout(() => setFlip(prev => !prev), 200)
+                        setTimeout(() => setFlip(prev => !prev), 4000)
+                    })
+            })
+            .catch(err => console.log(err))
+
+        setOpen(prev => !prev)
     }
 
     return (

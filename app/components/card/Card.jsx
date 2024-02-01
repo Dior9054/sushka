@@ -50,7 +50,6 @@ export default function Card({ food, canOpen }) {
                     page
                         ?
                         <Own
-                            page={page}
                             setPage={setPage}
                             food={food}
                             cart={cart}

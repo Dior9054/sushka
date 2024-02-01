@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-function Own({ page, food, setPage, cart, setCart, setAdd, check__cart, get__cart }) {
+function Own({ food, setPage, cart, setCart, setAdd, check__cart, get__cart }) {
     const [see, setSee] = useState(true)
 
     const handle__cart = () => {

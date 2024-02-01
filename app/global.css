@@ -1338,9 +1338,10 @@ body {
 
 @media(max-width: 768px) {
     .parent {
-        flex-direction: column-reverse;
+        height: 100dvh;
+        /* flex-direction: column-reverse;
         justify-content: space-between;
-        gap: 20px;
+        gap: 20px; */
     }
 
     .menu {
@@ -1461,6 +1462,81 @@ body {
     .handle__form {
         border-radius: 12px;
     }
+
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        z-index: 5;
+    }
+
+    .content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 15% !important;
+    }
+
+    .page {
+        position: fixed;
+    }
+
+    .page__body {
+        padding-bottom: 16%;
+    }
+
+    .modal {
+        position: fixed;
+        z-index: 9;
+    }
+
+    .handle {
+        z-index: 9;
+    }
+
+    /* 
+    .parent {
+        height: 100dvh !important;
+    }
+
+    .parent>div:first-child {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        z-index: 9;
+    }
+
+    .parent>div:last-child {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 30%;
+    }
+
+    .big__btn {
+        font-size: 21px;
+    }
+
+    .modal__block {
+        padding-bottom: 40%;
+    }
+
+    .page {
+        position: fixed;
+    }
+
+    .page__body {
+        padding-bottom: 30%;
+    } 
+    */
 }
 
 @media(max-width: 600px) {
@@ -1470,6 +1546,7 @@ body {
 
     .page__body {
         width: 100%;
+        padding-bottom: 20%;
     }
 
     .page__top img {
@@ -1478,6 +1555,7 @@ body {
 
     .content {
         padding: 20px 20px;
+        padding-bottom: 20% !important;
     }
 
     .buy__card {
@@ -1569,6 +1647,14 @@ body {
         width: 20px;
         height: 20px;
     }
+
+    .content {
+        padding-bottom: 22% !important;
+    }
+
+    .page__body {
+        padding-bottom: 22%;
+    }
 }
 
 @media(max-width: 425px) {
@@ -1579,6 +1665,14 @@ body {
 
     .navigation {
         width: 70%;
+    }
+
+    .content {
+        padding-bottom: 25% !important;
+    }
+
+    .page__body {
+        padding-bottom: 25%;
     }
 }
 
@@ -1604,38 +1698,16 @@ body {
     .page__top img {
         height: 185px;
     }
+
+    .big__btn {
+        font-size: 22px;
+    }
+
+    .page__body {
+        padding-bottom: 30%;
+    }
+
+    .content {
+        padding-bottom: 30% !important;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
