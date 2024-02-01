@@ -210,13 +210,17 @@ body {
 }
 
 .header__logo {
-    width: 52px;
-    height: 52px;
+    /* width: 55px; */
+    height: 55px;
+    
 }
+
+
 
 .header__logo img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .header__burger {
@@ -1563,7 +1567,8 @@ body {
         flex-direction: column;
     }
 
-    .header__logo,
+  
+    
     .burger,
     .button--favorite {
         width: 47px;

@@ -23,7 +23,7 @@ export default function Header() {
         <header className="header">
             <div className="header__logo">
                 <Link href="/">
-                    <img src="/assets/svg/logo.svg" />
+                    <img src="/assets/YP_logo.png" />
                 </Link>
             </div>
             <div className="header__burger">

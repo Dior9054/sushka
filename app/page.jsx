@@ -9,20 +9,19 @@ export default function Home() {
       </div>
 
       <div className="home__texts">
-        <h2 className="home__text--favorite">Your Favourite</h2>
-        <h1 className="home__text--sushi">Sushi</h1>
+        <h2 className="home__text--favorite">Ваша любимая</h2>
+        <h1 className="home__text--sushi">Пицца</h1>
         <p className="home__text--time">
-          We will deliver your favourite sushi in
-          <span> 30 minutes</span>
+          Доставим вашу любимую пиццу 
+          <span>быстро</span>
         </p>
       </div>
 
       <div className="home__button">
         <Link href="/main">
-          <button className="big__btn home__btn">Let’s choose</button>
+          <button className="big__btn home__btn">Давайте выберем</button>
         </Link>
       </div>
-
     </div>
   )
 }
