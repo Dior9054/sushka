@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useEffect, useState } from "react";
@@ -12,7 +11,6 @@ function Bask({ name, price, setCount, setmony, item, el }) {
             let newData = oldData.map(element => {
                 if (element.id == item.id) {
                     element.sizes = element.sizes.map(siz => siz.id == el.id ? { ...siz, quantity: state } : siz)
-                    element.bought = !!state
                 }
                 return element
             })
@@ -44,5 +42,6 @@ function Bask({ name, price, setCount, setmony, item, el }) {
 }
 
 export default Bask;
+
 
 

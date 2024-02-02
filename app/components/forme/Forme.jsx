@@ -56,6 +56,14 @@ function Forme({ setOpen, setFlip, mony }) {
             ...userDate
         }
 
+        setFlip(prev => {
+            return {
+                good: false,
+                loading: true,
+                err: false
+            }
+        })
+
         axiosJS.post("orders/", crorder)
             .then(res => {
                 fetch(`https://api.telegram.org/bot6713213966:AAH4BFRuKmQR5spD7TfcS7frHJ1gZr2eyDM/sendMessage`, {
@@ -70,12 +78,41 @@ function Forme({ setOpen, setFlip, mony }) {
                 })
                     .then(res => res.json())
                     .then(res => {
-                        setTimeout(() => setFlip(prev => !prev), 200)
-                        setTimeout(() => setFlip(prev => !prev), 4000)
+                        console.log(res);
+                        if (res.ok) {
+                            setFlip(prev => {
+                                return {
+                                    good: true,
+                                    loading: false,
+                                    err: false
+                                }
+                            })
+                        } else {
+                            setFlip(prev => {
+                                return {
+                                    good: false,
+                                    loading: false,
+                                    err: true
+                                }
+                            })
+                        }
                     })
             })
-            .catch(err => console.log(err))
+            .catch(err => setFlip(prev => {
+                return {
+                    good: false,
+                    loading: false,
+                    err: true
+                }
+            }))
 
+        setTimeout(() => setFlip(prev => {
+            return {
+                good: false,
+                loading: false,
+                err: false
+            }
+        }), 5000)
         setOpen(prev => !prev)
     }
 
@@ -123,3 +160,4 @@ function Forme({ setOpen, setFlip, mony }) {
 }
 
 export default Forme;
+

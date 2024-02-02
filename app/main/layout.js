@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Favorite from "../components/favorite/Favorite";
 import Forme from "../components/forme/Forme";
 import Header from "../components/header/Header";
@@ -21,7 +21,11 @@ export default function RootLayout({ children }) {
     const [hide, setHide] = useState(false)
     const [offset, setOffset] = useState(0)
     const [open, setOpen] = useState(false)
-    const [flip, setFlip] = useState(false)
+    const [flip, setFlip] = useState({
+        good: false,
+        loading: false,
+        err: false
+    })
     const [mony, setmony] = useState(0)
 
     useEffect(() => {

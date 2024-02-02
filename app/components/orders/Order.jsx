@@ -1,8 +1,8 @@
 
-function Order() {
+function Order({ text, color }) {
     return (
-        <div className="order">
-            <h1>Заказ успешна отправлен</h1>
+        <div className={`order ${color}`}>
+            <h1>{text}</h1>
         </div>
     );
 }

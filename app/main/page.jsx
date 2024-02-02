@@ -17,6 +17,7 @@ export default function page() {
         isLoad: false,
         result: null
     })
+    const [name, setName] = useState("")
 
     const [offset] = useContext(Little)
     const debounce = useDebounce(offset, 500)
@@ -25,6 +26,7 @@ export default function page() {
         if (foods?.result?.next) {
             axiosGet(foods.result.next)
                 .then(res => {
+                    console.log(res);
                     setFoods(prev => {
                         return {
                             isOk: true,
@@ -46,11 +48,11 @@ export default function page() {
 
     return (
         <Render__foods.Provider value={[foods, setFoods]}>
-            <Navigation />
+            <Navigation setName={setName} />
             <div className="main__content">
                 <div className="main__title">
-                    <h1>Types of Sushi</h1>
-                    <h2>Try the best sushi in the world</h2>
+                    <h1>Типы {name}</h1>
+                    <h2>Попробуйте лучшие блюда в Оше</h2>
                 </div>
                 <div className="cards">
                     {

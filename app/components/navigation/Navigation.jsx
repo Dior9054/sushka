@@ -7,7 +7,7 @@ import { axiosGet } from "../axios/axiosJS";
 import Loading from "../loading/Loading";
 import Not__load from "../notLoad/Not__load";
 
-export default function Navigation() {
+export default function Navigation({ setName }) {
     const [category, setCategory] = useState({
         isOk: true,
         isLoad: false,
@@ -48,6 +48,7 @@ export default function Navigation() {
     }
 
     const handle__Click = (e) => {
+        setName(e.target.textContent)
         if (+e.target.value == 0) {
             setFoods(prev => {
                 return {
@@ -84,6 +85,8 @@ export default function Navigation() {
     }
 
     useEffect(() => {
+        setName("Блюд")
+
         axiosGet("categories")
             .then(res => {
                 if (!!res) setCategory({ isOk: true, isLoad: true, result: res })
@@ -112,6 +115,7 @@ export default function Navigation() {
                     ?
                     (
                         <div className={`navigation__nodal ${hide ? "active" : ""}`} onClick={handle__Open}>
+                            {/*  <div className={`navigation__nodal`} onClick={handle__Open}> */}
                             <div className={`navigation ${hide ? "active" : ""}`}>
                                 <img src="/assets/svg/tringle.svg" className="nav__tringle" />
                                 {

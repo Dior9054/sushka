@@ -10,7 +10,11 @@ export default function Header() {
     const [hide, setHide] = useContext(Hid)
 
     const handle__Click = () => {
-        if (window.location.pathname == "/main") setHide(prev => !prev)
+        if (window.location.pathname == "/main") {
+            let a = document.querySelector(".navigation__nodal")
+            a.classList.add("open")
+            setHide(prev => !prev)
+        }
     }
 
     const handle__Favorite = (e) => {
