@@ -13,6 +13,7 @@ export default function page() {
   const [mony, setmony] = useContext(Mony)
   const [open, setOpen] = useContext(Open)
   const [flip, setFlip] = useContext(Flip)
+  const [all, setAll] = useState({ mony: 0, count: 0 })
   const [food, setFood] = useState([{
     name: '',
     size: [
@@ -27,6 +28,7 @@ export default function page() {
   const handle__Click = (e) => {
     if (!!count) setOpen(prev => !prev)
   }
+
   useEffect(() => {
     let date = JSON.parse(localStorage.getItem("cart")) || []
     setState(date)
@@ -58,8 +60,13 @@ export default function page() {
                 <Buy
                   item={item}
                   key={index}
+                  state={state}
                   setState={setState}
                   setCount={setCount}
+                  count={count}
+                  mony={mony}
+                  setAll={setAll}
+                  all={all}
                   setmony={setmony} />
               ))
               :
@@ -67,8 +74,23 @@ export default function page() {
           }
         </div>
         <div className="buy__bottom">
-          <h1>Общее количество блюд: <span>{count}</span></h1>
-          <p>Обший счёт: <span>{mony}</span></p>
+          <h1>Общее количество блюд: <span>{state}</span></h1>
+          <p>Обший счёт: <span>{
+            () => {
+              let a = JSON.parse(localStorage.getItem("cart"))
+
+              a.reduce((previousValue, currentValue) => {
+                let run = 0
+                currentValue.sizes.reduce((previous, current) => {
+                  return previous += +current.price
+                }, 0)
+
+                return previousValue += +run
+              }, 0)
+
+              console.log(run);
+            }
+          }</span></p>
           <button className="button" onClick={handle__Click}>Заказать все блюда</button>
         </div>
       </div>
