@@ -13,7 +13,6 @@ export default function page() {
   const [mony, setmony] = useContext(Mony)
   const [open, setOpen] = useContext(Open)
   const [flip, setFlip] = useContext(Flip)
-  const [all, setAll] = useState({ mony: 0, count: 0 })
   const [food, setFood] = useState([{
     name: '',
     size: [
@@ -25,10 +24,35 @@ export default function page() {
     ]
   }])
 
+  useEffect(() => {
+    let a = JSON.parse(localStorage.getItem("cart"))
+
+    setmony(prev => {
+      let count = a.reduce((previousValue, currentValue) => {
+        let b = currentValue.sizes.reduce((previus, currnet) => {
+          return previus += +currnet.quantity
+        }, 0)
+        return previousValue += +b
+      }, 0)
+
+      let mony = a.reduce((previousValue, currentValue) => {
+        let b = currentValue.sizes.reduce((previus, curren) => {
+          if (curren.quantity) {
+            return previus += +curren.price * curren.quantity
+          } else {
+            return 0
+          }
+        }, 0)
+        return previousValue += +b
+      }, 0)
+
+      return { count: count, mony: mony }
+    })
+  }, [count])
+
   const handle__Click = (e) => {
     if (!!count) setOpen(prev => !prev)
   }
-
   useEffect(() => {
     let date = JSON.parse(localStorage.getItem("cart")) || []
     setState(date)
@@ -60,13 +84,9 @@ export default function page() {
                 <Buy
                   item={item}
                   key={index}
-                  state={state}
                   setState={setState}
+                  state={state}
                   setCount={setCount}
-                  count={count}
-                  mony={mony}
-                  setAll={setAll}
-                  all={all}
                   setmony={setmony} />
               ))
               :
@@ -74,23 +94,8 @@ export default function page() {
           }
         </div>
         <div className="buy__bottom">
-          <h1>Общее количество блюд: <span>{state}</span></h1>
-          <p>Обший счёт: <span>{
-            () => {
-              let a = JSON.parse(localStorage.getItem("cart"))
-
-              a.reduce((previousValue, currentValue) => {
-                let run = 0
-                currentValue.sizes.reduce((previous, current) => {
-                  return previous += +current.price
-                }, 0)
-
-                return previousValue += +run
-              }, 0)
-
-              console.log(run);
-            }
-          }</span></p>
+          <h1>Общее количество блюд: <span>{mony.count}</span></h1>
+          <p>Обший счёт: <span>{mony.mony}</span></p>
           <button className="button" onClick={handle__Click}>Заказать все блюда</button>
         </div>
       </div>
