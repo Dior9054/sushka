@@ -69,7 +69,7 @@ export default function page() {
             ?
             <Order text="Загрузка" color="gray" />
             :
-            flip.err
+            flip.err || true
               ?
               <Order text="Ошибка" color="red" />
               :

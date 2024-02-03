@@ -129,7 +129,7 @@ function Forme({ setOpen, setFlip, mony }) {
                 <div className="handle__block">
                     <label htmlFor="email">
                         Email
-                        <input type="email" placeholder="Enter your email..." id="email" name="email" required />
+                        <input type="email" placeholder="Enter your email..." id="email" name="email" />
                     </label>
                 </div>
                 <div className="handle__block">
