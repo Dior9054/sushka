@@ -54,6 +54,8 @@ export default function page() {
       return { count: counte, mony: mony }
     })
 
+    console.log(mony);
+
   }, [count])
 
   useEffect(() => {

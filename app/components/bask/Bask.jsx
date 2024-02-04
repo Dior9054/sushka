@@ -37,6 +37,7 @@ function Bask({ name, price, setCount, setmony, item, el }) {
             })
             localStorage.setItem('cart', JSON.stringify(newData))
         }
+        setCount(prev => prev + 1)
     }, [state])
 
     return (
