@@ -25,13 +25,18 @@ export default function page() {
   }])
 
   useEffect(() => {
-    let a = JSON.parse(localStorage.getItem("cart"))
+    let a = JSON.parse(localStorage.getItem("cart")) || []
 
     setmony(prev => {
-      let count = a.reduce((previousValue, currentValue) => {
+      let counte = a.reduce((previousValue, currentValue) => {
         let b = currentValue.sizes.reduce((previus, currnet) => {
-          return previus += +currnet.quantity
+          if (currnet?.quantity >= 0) {
+            return previus += Number(currnet?.quantity) ?? 0
+          } else {
+            return previus += 0
+          }
         }, 0)
+
         return previousValue += +b
       }, 0)
 
@@ -46,8 +51,10 @@ export default function page() {
         return previousValue += +b
       }, 0)
 
-      return { count: count, mony: mony }
+      return { count: counte, mony: mony }
     })
+
+    console.log(mony);
   }, [count])
 
   const handle__Click = (e) => {
@@ -69,7 +76,7 @@ export default function page() {
             ?
             <Order text="Загрузка" color="gray" />
             :
-            flip.err || true
+            flip.err
               ?
               <Order text="Ошибка" color="red" />
               :

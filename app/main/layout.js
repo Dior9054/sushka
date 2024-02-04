@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         loading: false,
         err: false
     })
-    const [mony, setmony] = useState(0)
+    const [mony, setmony] = useState({ count: 0, mony: 0 })
 
     useEffect(() => {
         setFave(JSON?.parse(localStorage?.getItem("favorite"))?.length || 0)

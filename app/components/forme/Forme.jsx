@@ -48,7 +48,7 @@ function Forme({ setOpen, setFlip, mony }) {
 
         let time = new Date()
 
-        totalDate += `Итог: ${mony}сом \n`
+        totalDate += `Итог: ${mony.mony}сом \n`
         totalDate += `Время: ${time}`
 
         let crorder = {
