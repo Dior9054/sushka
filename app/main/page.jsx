@@ -26,7 +26,6 @@ export default function page() {
         if (foods?.result?.next) {
             axiosGet(foods.result.next)
                 .then(res => {
-                    console.log(res);
                     setFoods(prev => {
                         return {
                             isOk: true,

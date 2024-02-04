@@ -54,16 +54,16 @@ export default function page() {
       return { count: counte, mony: mony }
     })
 
-    console.log(mony);
   }, [count])
 
-  const handle__Click = (e) => {
-    if (!!count) setOpen(prev => !prev)
-  }
   useEffect(() => {
     let date = JSON.parse(localStorage.getItem("cart")) || []
     setState(date)
   }, [])
+
+  const handle__Click = (e) => {
+    if (!!count) setOpen(prev => !prev)
+  }
 
   return (
     <Foods.Provider value={[food, setFood]}>

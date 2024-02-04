@@ -78,7 +78,6 @@ function Forme({ setOpen, setFlip, mony }) {
                 })
                     .then(res => res.json())
                     .then(res => {
-                        console.log(res);
                         if (res.ok) {
                             setFlip(prev => {
                                 return {
