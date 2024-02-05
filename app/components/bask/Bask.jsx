@@ -27,6 +27,7 @@ function Bask({ name, price, setCount, setmony, item, el }) {
                 if (element.id == item.id) {
                     element.sizes = element.sizes.map(elem => {
                         if (elem.id == el.id) {
+                            element.bought = !!state
                             return { ...elem, quantity: state }
                         } else {
                             return elem

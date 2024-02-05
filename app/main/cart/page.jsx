@@ -25,6 +25,10 @@ export default function page() {
   }])
 
   useEffect(() => {
+    console.log("true");
+  }, [])
+
+  useEffect(() => {
     let a = JSON.parse(localStorage.getItem("cart")) || []
 
     setmony(prev => {
@@ -53,8 +57,6 @@ export default function page() {
 
       return { count: counte, mony: mony }
     })
-
-    console.log(mony);
 
   }, [count])
 

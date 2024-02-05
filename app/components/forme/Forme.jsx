@@ -27,6 +27,7 @@ function Forme({ setOpen, setFlip, mony }) {
         totalDate += "Заказы: \n"
 
         b.forEach(item => {
+            console.log(b);
             if (!!item.bought) {
                 totalDate += `  ${orderNumber += 1}) ${item.name} \n`
                 let sizes = []
@@ -86,6 +87,13 @@ function Forme({ setOpen, setFlip, mony }) {
                                     err: false
                                 }
                             })
+                            setTimeout(() => setFlip(prev => {
+                                return {
+                                    good: false,
+                                    loading: false,
+                                    err: false
+                                }
+                            }), 5000)
                         } else {
                             setFlip(prev => {
                                 return {
