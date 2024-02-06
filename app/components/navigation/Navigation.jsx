@@ -115,7 +115,6 @@ export default function Navigation({ setName }) {
                     ?
                     (
                         <div className={`navigation__nodal ${hide ? "active" : ""}`} onClick={handle__Open}>
-                            {/*  <div className={`navigation__nodal`} onClick={handle__Open}> */}
                             <div className={`navigation ${hide ? "active" : ""}`}>
                                 <img src="/assets/svg/tringle.svg" className="nav__tringle" />
                                 {
@@ -173,4 +172,3 @@ export default function Navigation({ setName }) {
         </>
     )
 }
-

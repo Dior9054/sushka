@@ -1,6 +1,9 @@
+import { Counte } from "@/app/main/layout"
+import { useContext } from "react"
 import { axiosJS } from "../axios/axiosJS"
 
 function Forme({ setOpen, setFlip, mony }) {
+    const [count, setCount] = useContext(Counte)
 
     const handle__Click = (e) => {
         let check = !e.target.closest(".handle__form") || !!e.target.closest(".handle__close")
@@ -12,13 +15,16 @@ function Forme({ setOpen, setFlip, mony }) {
 
         let userDate = new FormData(e.target)
         userDate = Object.fromEntries(userDate.entries())
-
+        console.log(userDate);
 
         let totalDate = ""
-        let fix = 0
-        for (let key in userDate) {
-            totalDate += `${fix += 1}) ${key}: ${userDate[key]}; \n`
-        }
+        totalDate += `2) Имя: ${userDate.name} \n`
+        totalDate += `3) Email: ${userDate.email} \n`
+        totalDate += `4) Телефон: ${userDate.phone} \n`
+        totalDate += `5) Адресс: ${userDate.address} \n`
+        totalDate += `6) Дом: ${userDate.home} \n`
+        totalDate += `7) Коментари: ${userDate.comments} \n`
+        totalDate += `8) Способ доставки: ${userDate.service_status == "delivery" ? "Доставка" : "Самовызов"} \n`
 
         let b = JSON.parse(localStorage.getItem("cart"))
 
@@ -58,12 +64,6 @@ function Forme({ setOpen, setFlip, mony }) {
             ...userDate
         }
 
-        // console.log(crorder);
-
-        // axiosJS.post("orders/", crorder)
-        //     .then(res => console.log(res))
-
-
         setFlip(prev => {
             return {
                 good: false,
@@ -83,7 +83,7 @@ function Forme({ setOpen, setFlip, mony }) {
                         },
                         body: JSON.stringify({
                             chat_id: "-4136328784",
-                            text: totalDate,
+                            text: "1) id: " + res.data.id + "\n" + totalDate,
                         }),
                     })
                         .then(res => res.json())
@@ -105,6 +105,16 @@ function Forme({ setOpen, setFlip, mony }) {
                                         err: false
                                     }
                                 }), 5000)
+                                let a = JSON.parse(localStorage.getItem("cart"))
+                                let b = a.map(item => {
+                                    item.sizes.map(item1 => {
+                                        return item1.quantity = 0
+                                    })
+
+                                    return { ...item }
+                                })
+                                localStorage.setItem("cart", JSON.stringify(b))
+                                setCount(prev => -1)
                             } else {
                                 setFlip(prev => {
                                     return {
@@ -135,7 +145,6 @@ function Forme({ setOpen, setFlip, mony }) {
                 }
             })
         }
-
         setTimeout(() => setFlip(prev => {
             return {
                 good: false,
@@ -144,7 +153,6 @@ function Forme({ setOpen, setFlip, mony }) {
                 err: false
             }
         }), 5000)
-
         setOpen(prev => !prev)
     }
 
@@ -188,12 +196,12 @@ function Forme({ setOpen, setFlip, mony }) {
                         <textarea type="text" placeholder="Enter your comment..." cols="3" rows="3" maxLength="300" id="comments" name="comments"></textarea>
                     </label>
                 </div>
-                <div>
-                    <div>
+                <div className="handle__radio">
+                    <div className="handle__check">
                         <input type="radio" id="pickup" name="service_status" value="pickup" required />
                         <label htmlFor="pickup">Самовызов</label>
                     </div>
-                    <div>
+                    <div className="handle__check">
                         <input type="radio" id="delivery" name="service_status" value="delivery" required />
                         <label htmlFor="delivery">Доставка</label>
                     </div>

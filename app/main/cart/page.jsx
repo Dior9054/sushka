@@ -3,13 +3,13 @@
 import Buy from "@/app/components/buy/Buy";
 import Order from "@/app/components/orders/Order";
 import { createContext, useContext, useEffect, useState } from "react";
-import { Flip, Mony, Open } from "../layout";
+import { Counte, Flip, Mony, Open } from "../layout";
 
 export const Foods = createContext("")
 
 export default function page() {
   const [state, setState] = useState("")
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useContext(Counte)
   const [mony, setmony] = useContext(Mony)
   const [open, setOpen] = useContext(Open)
   const [flip, setFlip] = useContext(Flip)

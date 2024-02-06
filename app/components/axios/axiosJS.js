@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const axiosJS = axios.create({
     baseURL: "https://tynybekfood.pythonanywhere.com/api/v1/",
-    timeout: 3000,
+    // timeout: 5000,
     headers: {
         "Content-Type": "application/json",
     },

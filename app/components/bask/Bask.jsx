@@ -1,9 +1,17 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { Counte } from "@/app/main/layout";
+import { useContext, useEffect, useState } from "react";
 
-function Bask({ name, price, setCount, setmony, item, el }) {
+function Bask({ name, price, setmony, item, el }) {
     const [state, setState] = useState(0)
+    const [count, setCount] = useContext(Counte)
+
+    useEffect(() => {
+        if (count == -1) {
+            setState(0)
+        }
+    }, [count])
 
     useEffect(() => {
         let a = JSON.parse(localStorage.getItem("cart")) ?? []
@@ -63,6 +71,5 @@ function Bask({ name, price, setCount, setmony, item, el }) {
 }
 
 export default Bask;
-
 
 
