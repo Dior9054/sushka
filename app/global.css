@@ -1225,6 +1225,12 @@ body {
     background-color: var(--op__card__bg__color);
 }
 
+.handle__block textarea {
+    resize: none;
+    border: 1px solid transparent;
+    outline: none;
+}
+
 @media(max-width: 1200px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);

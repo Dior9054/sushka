@@ -13,6 +13,7 @@ function Forme({ setOpen, setFlip, mony }) {
         let userDate = new FormData(e.target)
         userDate = Object.fromEntries(userDate.entries())
 
+
         let totalDate = ""
         let fix = 0
         for (let key in userDate) {
@@ -57,69 +58,93 @@ function Forme({ setOpen, setFlip, mony }) {
             ...userDate
         }
 
+        // console.log(crorder);
+
+        // axiosJS.post("orders/", crorder)
+        //     .then(res => console.log(res))
+
+
         setFlip(prev => {
             return {
                 good: false,
                 loading: true,
+                ispaid: false,
                 err: false
             }
         })
 
-        axiosJS.post("orders/", crorder)
-            .then(res => {
-                fetch(`https://api.telegram.org/bot6713213966:AAH4BFRuKmQR5spD7TfcS7frHJ1gZr2eyDM/sendMessage`, {
-                    method: "POST",
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        chat_id: "-4136328784",
-                        text: totalDate,
-                    }),
-                })
-                    .then(res => res.json())
-                    .then(res => {
-                        if (res.ok) {
-                            setFlip(prev => {
-                                return {
-                                    good: true,
-                                    loading: false,
-                                    err: false
-                                }
-                            })
-                            setTimeout(() => setFlip(prev => {
-                                return {
-                                    good: false,
-                                    loading: false,
-                                    err: false
-                                }
-                            }), 5000)
-                        } else {
-                            setFlip(prev => {
-                                return {
-                                    good: false,
-                                    loading: false,
-                                    err: true
-                                }
-                            })
-                        }
+        if (mony.mony > 800) {
+            axiosJS.post("orders/", crorder)
+                .then(res => {
+                    fetch(`https://api.telegram.org/bot6713213966:AAH4BFRuKmQR5spD7TfcS7frHJ1gZr2eyDM/sendMessage`, {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            chat_id: "-4136328784",
+                            text: totalDate,
+                        }),
                     })
-            })
-            .catch(err => setFlip(prev => {
+                        .then(res => res.json())
+                        .then(res => {
+                            if (res.ok) {
+                                setFlip(prev => {
+                                    return {
+                                        good: true,
+                                        loading: false,
+                                        ispaid: false,
+                                        err: false
+                                    }
+                                })
+                                setTimeout(() => setFlip(prev => {
+                                    return {
+                                        good: false,
+                                        loading: false,
+                                        ispaid: false,
+                                        err: false
+                                    }
+                                }), 5000)
+                            } else {
+                                setFlip(prev => {
+                                    return {
+                                        good: false,
+                                        loading: false,
+                                        ispaid: false,
+                                        err: true
+                                    }
+                                })
+                            }
+                        })
+                })
+                .catch(err => setFlip(prev => {
+                    return {
+                        good: false,
+                        loading: false,
+                        ispaid: false,
+                        err: true
+                    }
+                }))
+        } else {
+            setFlip(prev => {
                 return {
                     good: false,
                     loading: false,
-                    err: true
+                    ispaid: true,
+                    err: false
                 }
-            }))
+            })
+        }
 
         setTimeout(() => setFlip(prev => {
             return {
                 good: false,
                 loading: false,
+                ispaid: false,
                 err: false
             }
         }), 5000)
+
         setOpen(prev => !prev)
     }
 
@@ -156,6 +181,22 @@ function Forme({ setOpen, setFlip, mony }) {
                         Home
                         <input type="text" placeholder="Enter your home..." minLength="1" id="home" name="home" required />
                     </label>
+                </div>
+                <div className="handle__block">
+                    <label htmlFor="comments">
+                        Comments
+                        <textarea type="text" placeholder="Enter your comment..." cols="3" rows="3" maxLength="300" id="comments" name="comments"></textarea>
+                    </label>
+                </div>
+                <div>
+                    <div>
+                        <input type="radio" id="pickup" name="service_status" value="pickup" required />
+                        <label htmlFor="pickup">Самовызов</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="delivery" name="service_status" value="delivery" required />
+                        <label htmlFor="delivery">Доставка</label>
+                    </div>
                 </div>
                 <button type="submit" className="handle__button">Отправить</button>
                 <button type="button" className="button handle__close">

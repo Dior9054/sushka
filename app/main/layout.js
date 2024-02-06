@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
     const [flip, setFlip] = useState({
         good: false,
         loading: false,
+        ispaid: false,
         err: false
     })
     const [mony, setmony] = useState({ count: 0, mony: 0 })

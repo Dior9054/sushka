@@ -84,7 +84,11 @@ export default function page() {
               ?
               <Order text="Ошибка" color="red" />
               :
-              ""
+              flip.ispaid
+                ?
+                <Order text="Сумма для заказа меньше 800" color="red" />
+                :
+                ""
       }
       <div className="buy">
         <div className="buy__body">
